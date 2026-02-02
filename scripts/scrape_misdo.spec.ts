@@ -1,11 +1,6 @@
 import { test } from '@playwright/test';
 import fs from 'fs';
 
-//test('トップページをスクレイピングする', async ({ page }) => {
-//  console.log('🚀 TEST START');
-
-//  await page.goto('https://www.misterdonut.jp/');
-
 function toCsv(items: any[]) {
   const header = [
     'name',
@@ -62,8 +57,7 @@ test('商品一覧ページをスクレイピングする', async ({ page }) => 
          : null;
 
 
-        
-        results.push({
+                results.push({
             name,
             url: href ? `https://www.misterdonut.jp${href}` : null,
             image: img,
@@ -77,7 +71,6 @@ test('商品一覧ページをスクレイピングする', async ({ page }) => 
     console.log(results.slice(0, 3));
 
     //⑤　jsonに保存
-    console.log('🟡 書き出し直前');
     fs.writeFileSync(
         'data/products.json',
         JSON.stringify(
@@ -95,9 +88,6 @@ test('商品一覧ページをスクレイピングする', async ({ page }) => 
     const csv = toCsv(results);
     fs.writeFileSync('data/products.csv', csv, 'utf-8')
     
-    console.log('🟢 書き出し完了');
-
-
     //⑥　スクリーンショット
     await page.screenshot({
         path: 'images/product-list.png',
