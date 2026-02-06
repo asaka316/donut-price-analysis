@@ -72,7 +72,7 @@ test('商品一覧ページをスクレイピングする', async ({ page }) => 
 
     //⑤　jsonに保存
     fs.writeFileSync(
-        'misdo/data/products.json',
+        'misdo/data/misdo_products.json',
         JSON.stringify(
             {
                 count: results.length,
@@ -86,11 +86,11 @@ test('商品一覧ページをスクレイピングする', async ({ page }) => 
 
     // csv
     const csv = toCsv(results);
-    fs.writeFileSync('misdo/data/products.csv', csv, 'utf-8')
+    fs.writeFileSync('misdo/data/misdo_products.csv', csv, 'utf-8')
     
     //⑥　スクリーンショット
     await page.screenshot({
-        path: 'misdo/images/product-list.png',
+        path: 'misdo/images/misdo_product-list.png',
         fullPage: true,
     });
 });

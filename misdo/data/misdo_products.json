@@ -20,14 +20,14 @@
       "url": "https://www.misterdonut.jp/m_menu/donut/godiva_donut_26_02.html",
       "image": "/m_menu/donut/images/458/product_1.jpg",
       "takeout_price": "テイクアウト【税込】:￥345",
-      "eatin_price": "イートイン【税込】:￥352"
+      "eatin_price": "Eat-in【Tax included】:￥352"
     },
     {
       "name": "Soft French Cruller - Chocolat Noir",
       "url": "https://www.misterdonut.jp/m_menu/donut/godiva_donut_26_03.html",
       "image": "/m_menu/donut/images/459/product_1.jpg",
-      "takeout_price": "テイクアウト【税込】:￥270",
-      "eatin_price": "イートイン【税込】:￥275"
+      "takeout_price": "Takeout【Including tax】:￥270",
+      "eatin_price": "Eat-in【Tax included】:￥275"
     },
     {
       "name": "Soft French Cruller - Chocolat Caramel Praliné",
