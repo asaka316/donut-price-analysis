@@ -4,7 +4,7 @@ import path from 'path';
 
 test('クリスピー 一覧URL取得→JSON保存', async ({ page }) => {
   await page.goto('https://krispykreme.jp/menu/cat/doughnuts/', {
-    waitUntil: 'networkidle',
+    waitUntil: 'networkidle',//ネットワークが安定するのを待つ
   });
 
   // 商品カードが全部出るのを待つ

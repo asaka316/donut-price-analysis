@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 # ===== パス設定 =====
 script_dir = os.path.dirname(__file__)
@@ -40,9 +41,12 @@ print("misdo価格件数:", len(misdo_prices))
 print("krispy価格件数:", len(krispy_prices))
 
 # ===== グラフ =====
+all_prices = np.concatenate([misdo_prices, krispy_prices])
+bins = np.histogram_bin_edges(all_prices, bins=15)
+
 plt.figure(figsize=(8,5))
-plt.hist(misdo_prices, bins=10, alpha=0.6, label="Mister Donut")
-plt.hist(krispy_prices, bins=10, alpha=0.6, label="Krispy Kreme")
+plt.hist(misdo_prices, bins=bins, alpha=0.6, label="Mister Donut")
+plt.hist(krispy_prices, bins=bins, alpha=0.6, label="Krispy Kreme")
 
 plt.xlabel("Price (¥)")
 plt.ylabel("Number of Products")
@@ -51,18 +55,6 @@ plt.legend()
 plt.tight_layout()
 
 plt.savefig(os.path.join(images_dir, "price_comparison_hist.png"))
-plt.show()
-
-plt.figure(figsize=(8,5))
-plt.hist(misdo_prices, bins=10, alpha=0.6, label="Mister Donut")
-plt.hist(krispy_prices, bins=10, alpha=0.6, label="Krispy Kreme")
-
-plt.xlabel("Price (¥)")
-plt.ylabel("Number of Products")
-plt.title("Takeout Price Distribution")
-plt.legend()
-plt.tight_layout()
-plt.savefig(os.path.join(images_dir, "price_distribution_compare.png"))
 plt.show()
 
 plt.figure(figsize=(6,5))
